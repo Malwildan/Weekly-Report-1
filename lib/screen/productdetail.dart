@@ -9,13 +9,11 @@ class ProductDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Colors from the image
     final navyColor = const Color(0xFF1E3A52);
-    final goldColor = const Color(0xFFA66608); // Darker orange/brown for price
+    final goldColor = const Color(0xFFA66608);
 
     return Scaffold(
       backgroundColor: Colors.white,
-      // Custom AppBar to match dark theme
       appBar: AppBar(
         backgroundColor: navyColor,
         leading: IconButton(
@@ -30,14 +28,12 @@ class ProductDetailPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          // Scrollable Content
           Expanded(
             child: SingleChildScrollView(
               padding: const EdgeInsets.all(24.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Main Product Image
                   Container(
                     height: 300,
                     width: double.infinity,
@@ -52,7 +48,6 @@ class ProductDetailPage extends StatelessWidget {
                   
                   const SizedBox(height: 24),
 
-                  // Product Title
                   Text(
                     product.name,
                     style: const TextStyle(
@@ -64,7 +59,6 @@ class ProductDetailPage extends StatelessWidget {
                   
                   const SizedBox(height: 8),
 
-                  // Price
                   Text(
                     product.price,
                     style: TextStyle(
@@ -76,7 +70,6 @@ class ProductDetailPage extends StatelessWidget {
 
                   const SizedBox(height: 20),
 
-                  // Description Text
                   Text(
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor est nec metus vulputate, ac vestibulum purus suscipit. Nullam pretium ultrices neque, non ultricies nisi venenatis vitae.",
                     style: TextStyle(
@@ -99,7 +92,6 @@ class ProductDetailPage extends StatelessWidget {
 
                   const SizedBox(height: 30),
 
-                  // Seller Info Row
                   Row(
                     children: [
                       Container(
@@ -109,7 +101,6 @@ class ProductDetailPage extends StatelessWidget {
                           shape: BoxShape.circle,
                           border: Border.all(color: Colors.grey.shade300),
                           image: const DecorationImage(
-                             // Placeholder logo
                             image: AssetImage("assets/logo.png"), 
                           ),
                         ),
@@ -140,8 +131,6 @@ class ProductDetailPage extends StatelessWidget {
               ),
             ),
           ),
-
-          // Bottom Action Bar
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
             decoration: BoxDecoration(
@@ -153,12 +142,11 @@ class ProductDetailPage extends StatelessWidget {
             ),
             child: Row(
               children: [
-                // Cart Button
                 Container(
                   height: 50,
                   width: 50,
                   decoration: BoxDecoration(
-                    color: const Color(0xFFFF9F43), // Orange button
+                    color: const Color(0xFFFF9F43),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: IconButton(
@@ -167,7 +155,6 @@ class ProductDetailPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: 16),
-                // Buy Now Button
                 Expanded(
                   child: SizedBox(
                     height: 50,

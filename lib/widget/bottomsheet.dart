@@ -38,9 +38,8 @@ class _BottomSheetState extends State<BottomSheet> {
         ),
       ),
       child: Column(
-        mainAxisSize: MainAxisSize.min, // Takes only necessary height
+        mainAxisSize: MainAxisSize.min,
         children: [
-          // Row for Label and Counter
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -54,13 +53,11 @@ class _BottomSheetState extends State<BottomSheet> {
               ),
               Row(
                 children: [
-                  // Minus Button
                   _buildCounterButton(
                     icon: Icons.remove,
                     onTap: _decrement,
                   ),
                   const SizedBox(width: 20),
-                  // Quantity Text
                   Text(
                     quantity.toString(),
                     style: const TextStyle(
@@ -70,7 +67,6 @@ class _BottomSheetState extends State<BottomSheet> {
                     ),
                   ),
                   const SizedBox(width: 20),
-                  // Plus Button
                   _buildCounterButton(
                     icon: Icons.add,
                     onTap: _increment,
@@ -82,14 +78,12 @@ class _BottomSheetState extends State<BottomSheet> {
           
           const SizedBox(height: 30),
 
-          // "Beli Sekarang" Action Button
           SizedBox(
             width: double.infinity,
             height: 50,
             child: ElevatedButton(
               onPressed: () {
-                // Handle the final purchase logic here
-                Navigator.pop(context); // Close the popup
+                Navigator.pop(context);
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(content: Text('Added $quantity items to cart!')),
                 );
@@ -115,7 +109,6 @@ class _BottomSheetState extends State<BottomSheet> {
     );
   }
 
-  // Helper widget for the small orange buttons
   Widget _buildCounterButton({required IconData icon, required VoidCallback onTap}) {
     return GestureDetector(
       onTap: onTap,
