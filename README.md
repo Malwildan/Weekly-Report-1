@@ -3,4 +3,4 @@ weekly report intern bcc 2026 as front end mobile
 
 ## handson1
 
-A new Flutter project.
+slicing tugas hands on
