@@ -34,7 +34,6 @@ class ProductCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Image Area
             Expanded(
               flex: 3,
               child: Container(
@@ -42,12 +41,10 @@ class ProductCard extends StatelessWidget {
                 padding: const EdgeInsets.all(12),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8),
-                  // Using Unsplash for realistic placeholders
                   child: Image.network(
                     '${product.imageKey}', 
                     fit: BoxFit.cover,
                     errorBuilder: (context, error, stackTrace) {
-                      // Fallback if image fails to load
                       return Container(color: Colors.grey[200], child: const Icon(Icons.image));
                     },
                   ),
@@ -55,7 +52,6 @@ class ProductCard extends StatelessWidget {
               ),
             ),
             
-            // Details Area
             Expanded(
               flex: 2,
               child: Padding(
@@ -80,7 +76,7 @@ class ProductCard extends StatelessWidget {
                         Text(
                           product.price,
                           style: const TextStyle(
-                            color: Colors.orange, // Price color matches image
+                            color: Colors.orange,
                             fontWeight: FontWeight.bold,
                             fontSize: 13,
                           ),
