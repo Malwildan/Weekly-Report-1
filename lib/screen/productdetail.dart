@@ -12,7 +12,7 @@ class ProductDetailPage extends StatelessWidget {
     final navyColor = const Color(0xFF1E3A52);
     final goldColor = const Color(0xFFA66608);
 
-    int quantity = 0;
+    int quantity = 1;
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -235,11 +235,19 @@ class ProductDetailPage extends StatelessWidget {
                                         borderRadius: BorderRadius.circular(12),
                                       ),
                                     ),
-                                    child: const Text(
-                                      'Beli Sekarang',
-                                      style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold,
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(builder: (context) => Bayar(product: product, quantity: quantity,)),
+                                        );
+                                      },
+                                      child: const Text(
+                                        'Beli Sekarang',
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                       ),
                                     ),
                                   ),
